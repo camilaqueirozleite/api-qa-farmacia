@@ -8,10 +8,6 @@
 
 ---
 
-Claro, Camila — aqui está **um único texto contínuo**, completo, limpo e pronto para **copiar e colar diretamente no GitHub**, sem seções separadas ou instruções extras.
-
----
-
 # 🧪 API QA Farmácia — Testes Automatizados de API
 
 Este projeto consiste numa suíte de testes automatizados de API desenvolvida em **Node.js**, utilizando **Mocha, Chai e Supertest**, com o objetivo de validar um sistema fictício de **gestão de farmácia**. A API testada inclui funcionalidades como autenticação de utilizadores via JWT, listagem de medicamentos e dispensação de medicamentos através de transferências entre contas.
