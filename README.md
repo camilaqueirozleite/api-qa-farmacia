@@ -73,44 +73,40 @@ A API utiliza autenticação JWT.
 Após login, é retornado um token que deve ser usado no header:
 
 Authorization: Bearer <token>
+
 💊 Funcionalidades testadas
-🔹 Login
+Login
 Autenticação de utilizador
 Geração de token JWT
 Validação de credenciais
-🔹 Medicamentos
+
+Medicamentos
 Listagem de medicamentos disponíveis
 Proteção de rota com token
 Bloqueio de acesso sem autenticação
-🔹 Dispensação de medicamentos
+
+Dispensação de medicamentos
 Transferência entre contas
 Validação de regras de negócio
 Testes de valores válidos e inválidos
+
 🚀 Como executar o projeto
-1. Instalar dependências
 npm install
-2. Executar testes
-npm test
-📊 Exemplo de execução
+Exemplo de execução
 ✔ Login API
 ✔ Listagem de medicamentos
 ✔ Acesso bloqueado sem token
 ✔ Dispensação validada
+
 🧠 Aprendizados
 Testes automatizados de API REST
 Uso de JWT em testes
 Estruturação de testes por módulos
 Validação de regras de negócio
 Boas práticas de QA Backend
+
 👩‍💻 Autor
 
 Projeto desenvolvido por Camila Leite
 QA Automation Portfolio Project
-
-
-
-
----
-
-l final"
-git push
+1. Instalar dependências
