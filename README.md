@@ -12,7 +12,10 @@
 
 Este projeto consiste numa suíte de testes automatizados de API desenvolvida em **Node.js**, utilizando **Mocha, Chai e Supertest**, com o objetivo de simular um sistema de gestão de farmácia.
 
-A API testada inclui funcionalidades como autenticação de utilizadores, listagem de medicamentos e operações de dispensação (transferências).
+A API testada inclui funcionalidades como:
+- Autenticação de utilizadores (JWT)
+- Listagem de medicamentos
+- Dispensação de medicamentos (transferências entre contas)
 
 ---
 
@@ -32,9 +35,82 @@ A API testada inclui funcionalidades como autenticação de utilizadores, listag
 - Mocha
 - Chai
 - Supertest
-- API REST local
+- API REST
 - JWT Authentication
 
 ---
 
 ## 📂 Estrutura do projeto
+
+
+api-qa-farmacia/
+│
+├── test/
+│ ├── login.test.js
+│ ├── medicamentos.test.js
+│ └── dispensacao.test.js
+│
+├── package.json
+├── package-lock.json
+├── .gitignore
+└── README.md
+
+
+---
+
+## 🔐 Autenticação
+
+A API utiliza autenticação JWT.
+
+### Credenciais de acesso:
+
+```json id="auth1"
+{
+  "username": "julio.lima",
+  "senha": "123456"
+}
+
+Após login, é retornado um token que deve ser usado no header:
+
+Authorization: Bearer <token>
+💊 Funcionalidades testadas
+🔹 Login
+Autenticação de utilizador
+Geração de token JWT
+Validação de credenciais
+🔹 Medicamentos
+Listagem de medicamentos disponíveis
+Proteção de rota com token
+Bloqueio de acesso sem autenticação
+🔹 Dispensação de medicamentos
+Transferência entre contas
+Validação de regras de negócio
+Testes de valores válidos e inválidos
+🚀 Como executar o projeto
+1. Instalar dependências
+npm install
+2. Executar testes
+npm test
+📊 Exemplo de execução
+✔ Login API
+✔ Listagem de medicamentos
+✔ Acesso bloqueado sem token
+✔ Dispensação validada
+🧠 Aprendizados
+Testes automatizados de API REST
+Uso de JWT em testes
+Estruturação de testes por módulos
+Validação de regras de negócio
+Boas práticas de QA Backend
+👩‍💻 Autor
+
+Projeto desenvolvido por Camila Leite
+QA Automation Portfolio Project
+
+
+
+
+---
+
+l final"
+git push
