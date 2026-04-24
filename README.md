@@ -65,7 +65,7 @@ api-qa-farmacia/
 
 A API utiliza autenticação JWT.
 
-### Credenciais de acesso:
+Credenciais utilizadas no login:
 
 ```json
 {
