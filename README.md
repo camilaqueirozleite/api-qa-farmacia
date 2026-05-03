@@ -1,120 +1,114 @@
-# 📘 API QA Farmácia  
-API desenvolvida para estudos e práticas de QA, incluindo autenticação, CRUD de medicamentos e registro de dispensações. Documentada com Swagger e estruturada em arquitetura MVC.
+# API QA Farmacia
+API desenvolvida para estudos e praticas de QA, incluindo autenticacao, CRUD de medicamentos e registro de dispensacoes. Documentada com Swagger e estruturada em arquitetura MVC.
 
----
+## Tecnologias Utilizadas
+- Node.js
+- Express
+- Swagger (OpenAPI 3.0)
+- Arquitetura MVC
+- JavaScript
 
-## 🚀 Tecnologias Utilizadas
-- Node.js  
-- Express  
-- Swagger (OpenAPI 3.0)  
-- Arquitetura MVC  
-- JavaScript  
+## Instalacao e Execucao
 
----
+Clone o repositorio:
 
-## 📦 Instalação e Execução
-
-Clone o repositório:
-
-```bash
 git clone https://github.com/camilaqueirozleite/api-qa-farmacia.git
 
-Instale as dependências:
+Instale as dependencias:
 
-bash
 npm install
+
 Execute o servidor:
 
-bash
 npm start
-A API ficará disponível em:
 
-Código
+A API ficara disponivel em:
+
 http://localhost:3001
-📚 Documentação Swagger
-Acesse a documentação completa da API:
 
-Código
+## Documentacao Swagger
+
+Acesse:
+
 http://localhost:3001/api-docs
 
-## 🔐 Autenticação — Login
+## Autenticacao - Login
+
 POST /login
+
 Body:
 
-json
 {
   "usuario": "admin",
   "senha": "123"
 }
+
 Retornos:
+- 200 Login realizado com sucesso
+- 401 Credenciais invalidas
 
-200 → Login realizado com sucesso
+## Medicamentos (CRUD Completo)
 
-401 → Credenciais inválidas
-
-## 💊 Medicamentos (CRUD Completo)
-GET /medicamentos
+GET /medicamentos  
 Lista todos os medicamentos.
 
-POST /medicamentos
+POST /medicamentos  
 Cria um novo medicamento.
 
 Body:
 
-json
 {
   "nome": "Dipirona",
-  "descricao": "Analgésico e antitérmico",
+  "descricao": "Analgesico e antitermico",
   "preco": 12.50
 }
-GET /medicamentos/{id}
+
+GET /medicamentos/{id}  
 Busca medicamento pelo ID.
 
-PUT /medicamentos/{id}
+PUT /medicamentos/{id}  
 Atualiza um medicamento.
 
-DELETE /medicamentos/{id}
+DELETE /medicamentos/{id}  
 Remove um medicamento.
 
-## 💉 Dispensação
+## Dispensacao
+
 POST /dispensacao
+
 Body:
 
-json
 {
   "medicamentoId": "123",
   "quantidade": 2,
-  "paciente": "João da Silva"
+  "paciente": "Joao da Silva"
 }
+
 Retorno:
+- 201 Dispensacao registrada
 
-201 → Dispensação registrada
+## Estrutura do Projeto
 
-## 🗂 Estrutura do Projeto
-Código
 api-qa-farmacia/
-│
-├── src/
-│   ├── controllers/
-│   ├── middlewares/
-│   ├── models/
-│   ├── routes/
-│   ├── services/
-│   ├── config/
-│   ├── swagger.json
-│   └── app.js
-│
-├── tests/
-│   └── integration/
-│
-├── package.json
-├── package-lock.json
-└── README.md
-##🧪 Testes
-Os testes podem ser realizados diretamente pelo Swagger ou via ferramentas como:
+  src/
+    controllers/
+    middlewares/
+    models/
+    routes/
+    services/
+    config/
+    swagger.json
+    app.js
+  tests/
+    integration/
+  package.json
+  package-lock.json
+  README.md
 
-Thunder Client
-Postman
-Insomnia
+## Testes
 
-Insomnia
+Os testes podem ser realizados via:
+- Swagger
+- Thunder Client
+- Postman
+- Insomnia
