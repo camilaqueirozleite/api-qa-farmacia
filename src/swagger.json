@@ -1,0 +1,153 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API QA Farmácia",
+    "version": "1.0.0",
+    "description": "Documentação da API de Farmácia"
+  },
+  "paths": {
+    "/login": {
+      "post": {
+        "summary": "Realizar login",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "usuario": { "type": "string" },
+                  "senha": { "type": "string" }
+                },
+                "required": ["usuario", "senha"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Login realizado com sucesso" },
+          "401": { "description": "Credenciais inválidas" }
+        }
+      }
+    },
+
+    "/medicamentos": {
+      "get": {
+        "summary": "Listar medicamentos",
+        "responses": {
+          "200": {
+            "description": "Lista de medicamentos retornada com sucesso"
+          }
+        }
+      },
+      "post": {
+        "summary": "Criar um novo medicamento",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "nome": { "type": "string" },
+                  "descricao": { "type": "string" },
+                  "preco": { "type": "number" }
+                },
+                "required": ["nome", "preco"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Medicamento criado com sucesso" }
+        }
+      }
+    },
+
+    "/medicamentos/{id}": {
+      "get": {
+        "summary": "Buscar medicamento por ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "Medicamento encontrado" },
+          "404": { "description": "Medicamento não encontrado" }
+        }
+      },
+      "put": {
+        "summary": "Atualizar medicamento",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "nome": { "type": "string" },
+                  "descricao": { "type": "string" },
+                  "preco": { "type": "number" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Medicamento atualizado" }
+        }
+      },
+      "delete": {
+        "summary": "Remover medicamento",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "Medicamento removido" }
+        }
+      }
+    },
+
+    "/dispensacao": {
+      "post": {
+        "summary": "Registrar dispensação de medicamento",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "medicamentoId": { "type": "string" },
+                  "quantidade": { "type": "number" },
+                  "paciente": { "type": "string" }
+                },
+                "required": ["medicamentoId", "quantidade"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Dispensação registrada" }
+        }
+      }
+    }
+  }
+}
